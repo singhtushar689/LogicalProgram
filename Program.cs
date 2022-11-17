@@ -1,27 +1,24 @@
-﻿namespace LogicalProgram
+﻿using System.Globalization;
+
+namespace LogicalProgram
 {
     class Program
     {
         public static void Main()
         {
-            int sum = 0;
             Console.WriteLine("Enter the Number");
             int number = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i <number; i++)
+            for (int i = 2; i < number / 2; i++)
             {
                 if (number % i == 0)
                 {
-                    sum = sum + i;
+                    Console.WriteLine(number + " is not Prime");
+                    return;
                 }
             }
-            if (sum == number)
             {
-                Console.WriteLine(number  + "is a perfect Number");
+                Console.WriteLine(number + " is a Prime");
             }
-            else
-            {
-                Console.WriteLine(number +  " is not a perfect Number");
-            }
-        } 
-    }             
+        }
+    }
 }
