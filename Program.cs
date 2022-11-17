@@ -1,27 +1,27 @@
 ﻿namespace LogicalProgram
 {
-     class Program
+    class Program
     {
-        public static void FibSeries(int terms)
+        public static void Main()
         {
-            int a=0 , b=1 , c = 0;
-            if (terms == 0)
+            int sum = 0;
+            Console.WriteLine("Enter the Number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <number; i++)
             {
-                Console.WriteLine(a);
+                if (number % i == 0)
+                {
+                    sum = sum + i;
+                }
             }
-            for (int i =1; i <= terms ; i++)
+            if (sum == number)
             {
-                c = a + b;
-                a = b;
-                b = c;
-                Console.WriteLine(b + " ");
+                Console.WriteLine(number  + "is a perfect Number");
             }
-        }
-          public static void Main(string[] args)
-          { 
-            Console.WriteLine("Enter the number of terms in Fibonacci Series");
-            int terms = Convert.ToInt32(Console.ReadLine());
-            FibSeries(terms);
-          }
-    }
+            else
+            {
+                Console.WriteLine(number +  " is not a perfect Number");
+            }
+        } 
+    }             
 }
