@@ -8,17 +8,14 @@ namespace LogicalProgram
         {
             Console.WriteLine("Enter the Number");
             int number = Convert.ToInt32(Console.ReadLine());
-            for (int i = 2; i < number / 2; i++)
+            int reverse = 0;
+            while(number > 0)
             {
-                if (number % i == 0)
-                {
-                    Console.WriteLine(number + " is not Prime");
-                    return;
-                }
+                int remainder = number % 10;
+                reverse = (reverse *10) + remainder;
+                number = number / 10;
             }
-            {
-                Console.WriteLine(number + " is a Prime");
-            }
+            Console.WriteLine("Reverse number is " + reverse);        
         }
     }
 }
