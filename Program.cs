@@ -1,27 +1,30 @@
 ﻿namespace LogicalProgram
 {
-     class Program
+    class Program
     {
-        public static void FibSeries(int terms)
-        {
-            int a=0 , b=1 , c = 0;
-            if (terms == 0)
+        public static void Main(string[] args) 
+         {
+             Console.WriteLine("Welcome to Logica Programs");
+             Console.WriteLine("Enter num of coupon ");
+             int num = Convert.ToInt32(Console.ReadLine());
+             //create an array and Initializing all the values to false
+             bool[] couponNumArray = new bool[num];
+             int countRandom = 0;
+             int i = 0;
+
+            while (i<num)
             {
-                Console.WriteLine(a);
-            }
-            for (int i =1; i <= terms ; i++)
-            {
-                c = a + b;
-                a = b;
-                b = c;
-                Console.WriteLine(b + " ");
+                Random random = new Random();
+                int couponNum = random.Next(0, num);
+                countRandom++;
+                if(couponNumArray[couponNum] == false)
+                {
+                    couponNumArray[couponNum] = true;
+                    i++;
+                }
+
+                Console.Write(countRandom + " times random coupons are generates to get unique coupon number");
             }
         }
-          public static void Main(string[] args)
-          { 
-            Console.WriteLine("Enter the number of terms in Fibonacci Series");
-            int terms = Convert.ToInt32(Console.ReadLine());
-            FibSeries(terms);
-          }
     }
 }
